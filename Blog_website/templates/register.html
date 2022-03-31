@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}
+    REGISTER
+{% endblock title %}
+
+{% block main %}
+<body class="">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1461468611824-46457c0e11fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    class="card-img" alt="thinking">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <form method="POST" class="form-register" style="color:rgb(75, 88, 73)">
+                        <h1 class="h3 mb-3 font-weight-normal text-center">
+                            Register
+                        </h1>
+                        {{ rform.hidden_tag() }}
+                        {{ rform.username.label(class="col-sm-6  col-form-label") }}
+                        {{ rform.username(class="form-control", placeholder="User name")}} 
+                        {{ rform.email.label(class="col-sm-6 col-form-label") }}
+                        {{ rform.email(class="form-control", placeholder="Email")}} 
+                        {{ rform.password.label(class="col-sm-6  col-form-label") }}
+                        {{ rform.password(class="form-control", placeholder="PASSWORD")}} 
+                        {{ rform.confirm_password.label(class="col-sm-6  col-form-label") }}
+                        {{ rform.confirm_password(class="form-control", placeholder="PASSWORD")}} 
+                        <br>
+                        {{ rform.submit(class="btn btn-md btn-md btn-secondary") }}
+                        <br>
+                        <div class="checkbox mb-1 text-center">
+                            <h6>Already have an account?</h6>
+                            <a class="btn btn-sm btn-secondary" href="{{ url_for('register') }}">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock main %}
