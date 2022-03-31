@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}
+HOME
+{% endblock title %}
+
+
+{% block main %}
+
+<body class="">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1461468611824-46457c0e11fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    class="card-img" alt="thinking">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <form method="POST" class="" style="color:rgb(117, 160, 161)">
+                        {{ lform.hidden_tag() }}
+                        <img class="mb-4" src="" alt="">
+                        <h1 class="h3 mb-3 font-weight-normal text-center">
+                            Please Login
+                        </h1>
+                        <br>
+                        {{ lform.email.label(class="col-sm-2 col-form-label") }}
+                        {{ lform.email(class="form-control", placeholder="Email") }}
+
+                        {{ lform.password.label(class="col-sm-2 col-form-label") }}
+                        {{ lform.password(class="form-control", placeholder="Password") }}
+
+                        <br>                        
+                        
+                        {{ lform.submit(class="btn btn-md btn-md btn-secondary") }}
+                        
+                        <div class="checkbox mb-3 text-center">
+                            <h6>Do not have an account?</h6>
+                            <a class="btn-sm btn-sm btn-secondary" href="{{ url_for('register') }}">Register</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock main %}
